@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="normalize.css">
     <link rel="stylesheet" href="style.css">
+    <script defer src="script.js"></script>
     <title>Document</title>
 </head>
 <body>
@@ -19,11 +20,63 @@
                 <li>Mobil app</li>
                 <li>Contact us</li>
             </ul>
-            <button class="menu-button">menu</button>
+            <button class="menu-button">Menu</button>
         </header>
-        <main>
-            <section>main section</section>
-            <section>slider</section>
+        <main class="main">
+            <section class="hero">
+                <div class="hero__content">
+                    <h1 class="hero__title heading-1">
+                        <span class="hero__title-accent">Enjoy</span> 
+                        premium coffee at our charming cafe
+                    </h1>
+                    <p class="hero__text">
+                        With its inviting atmosphere and delicious coffee options, the Coffee 
+                        House Resource is a popular destination for coffee lovers and those 
+                        seeking a warm and inviting space to enjoy their favorite beverage.
+                    </p>
+                    <button class="hero__button">Menu</button>
+                </div>
+            </section>
+            <section class="slider-section">
+                <h2 class="slider__title heading-2">Choose your <span class="slider__title-accent">favorite </span>coffee</h2>
+                <div class="slider" aria-roledescription="carousel">
+                    <button class="slider__arrow slider__arrow--prev" aria-label="Previous slide"></button>
+                    <div class="slider__viewport">
+                        <div class="slider__track">
+                            <div class="slider__slide is-active">
+                                <img src="assets/images/coffee-slider-1.png" alt="Espresso">
+                                <div class="slider__info">
+                                    <h3 class="slider__name">S’mores Frappuccino</h3>
+                                    <p class="slider__description">This new drink takes an espresso and mixes it with brown sugar and cinnamon before being topped with oat milk.</p>
+                                    <span class="slider__price">$5.50</span>
+                                </div>
+                            </div>
+                            <div class="slider__slide">
+                                <img src="assets/images/coffee-slider-2.png" alt="Cappuccino">
+                                <div class="slider__info">
+                                    <h3 class="slider__name">Caramel Macchiato</h3>
+                                    <p class="slider__description">Freshly steamed milk with vanilla-flavored syrup marked with espresso and finished with caramel sauce.</p>
+                                    <span class="slider__price">$4.75</span>
+                                </div>
+                            </div>
+                            <div class="slider__slide">
+                                <img src="assets/images/coffee-slider-3.png" alt="Latte">
+                                <div class="slider__info">
+                                    <h3 class="slider__name">Iced Coffee</h3>
+                                    <p class="slider__description">Our signature, rich espresso combined with bittersweet mocha sauce and steamed milk, then topped with sweetened whipped cream.</p>
+                                    <span class="slider__price">$3.25</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <button class="slider__arrow slider__arrow--next" aria-label="Next slide"></button>
+                    <div class="slider__dots" role="tablist" aria-label="Choose slide">
+                        <button class="slider__dot is-active" role="tab" aria-selected="true" aria-controls="slide-1"></button>
+                        <button class="slider__dot" role="tab" aria-selected="false" aria-controls="slide-2"></button>
+                        <button class="slider__dot" role="tab" aria-selected="false" aria-controls="slide-3"></button>
+                    </div>
+                </div>
+            </section>
             <section>about</section>
             <section>download app</section>
         </main>
