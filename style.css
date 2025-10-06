@@ -237,6 +237,8 @@ h2.accent,
     text-align: center;
     width: 100%;
     margin-bottom: 40px;
+    font-size: 59px;
+    line-height: 125%;
 }
 
 .slider__title-accent {
@@ -340,7 +342,7 @@ h2.accent,
     width: 40px;
     height: 4px;
     border-radius: 2px;
-    background: var(--border-dark);
+    background: var(--border-light);
     border: 0;
     cursor: pointer;
     transition: background-color 0.3s ease;
@@ -350,7 +352,103 @@ h2.accent,
     background: var(--text-dark); 
 }
 
+/* About section */
+.about-section {
+    width: 100%;
+}
+
+.about__content {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+    align-items: stretch;
+}
+
+.about__text {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+}
+
+.about__title {
+    margin: 0;
+    font-size: 59px;
+    line-height: 125%;
+}
+
+.about__title-accent {
+    color: var(--text-accent);
+}
+
+.about__description {
+    font-family: var(--ff-base);
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 1.5;
+    color: var(--text-dark);
+    margin: 0;
+}
+
+.about__images {
+    display: grid;
+    grid-template-columns: 660px 660px;
+    gap: 40px;
+    justify-content: center;
+}
+
+.about__col {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+}
+
+.about__image {
+    border-radius: 20px;
+    overflow: hidden;
+}
+
+.about__image--large { height: 590px; }
+.about__image--small { height: 430px; }
+
+.about__image:nth-child(1) {
+    grid-column: 1;
+    grid-row: 1;
+}
+
+.about__image:nth-child(2) {
+    grid-column: 2;
+    grid-row: 1;
+}
+
+.about__image:nth-child(3) {
+    grid-column: 1;
+    grid-row: 2;
+}
+
+.about__image:nth-child(4) {
+    grid-column: 2;
+    grid-row: 2;
+}
+
+.about__image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    border-radius: inherit;
+    transform-origin: center;
+    transition: transform 0.3s ease;
+}
+
+.about__image:hover img {
+    transform: scale(0.9);
+}
+
 /* Sections spacing */
 section:not(:last-child) {
     margin-bottom: 100px;
+}
+
+section:last-child {
+    margin-bottom: 40px;
 }
