@@ -1,0 +1,81 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,400;0,600;1,400;1,600&display=swap');
+
+:root {
+	/* Text colors */
+	--text-dark: #403F3D;
+	--text-light: #E1D4C9;
+	--text-accent: #B0907A;
+
+	/* Backgrounds */
+	--bg-body: #E1D4C9;
+	--bg-container: #665F55;
+	--bg-backdrop: rgba(64, 63, 61, 0.8);
+
+	/* Borders */
+	--border-light: #C1B6AD;
+	--border-dark: #665F55;
+
+	/* Font / typography variables */
+	--ff-base: 'Inter', system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+
+	/* Heading 1 */
+	--h1-size: 42px;
+	--h1-weight: 600;
+	--h1-line: 1.15;
+
+	/* Heading 2 */
+	--h2-size: 32px;
+	--h2-weight: 600;
+	/* 125% -> 1.25 */
+	--h2-line: 1.25;
+}
+
+body {
+	font-family: var(--ff-base);
+	color: var(--text-dark);
+	background-color: var(--bg-body);
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+}
+
+h1,
+.heading-1 {
+	font-family: var(--ff-base);
+	font-size: var(--h1-size);
+	font-weight: var(--h1-weight);
+	line-height: var(--h1-line);
+	color: var(--text-dark);
+	margin: 0 0 0.5em 0;
+}
+
+h1.accent,
+.heading-1.accent {
+	font-style: italic;
+}
+
+/* Heading 2 styles */
+h2,
+.heading-2 {
+	font-family: var(--ff-base);
+	font-size: var(--h2-size);
+	font-weight: var(--h2-weight);
+	line-height: var(--h2-line);
+	color: var(--text-dark);
+	margin: 0 0 0.5em 0;
+}
+
+h2.accent,
+.heading-2.accent {
+	font-style: italic;
+}
+
+.main-container {
+    max-width: 1440px;
+    margin: 0 auto;
+    padding: 0 20px;
+    box-sizing: border-box;
+}
+
+.header {
+    padding: 20px 0;
+}
