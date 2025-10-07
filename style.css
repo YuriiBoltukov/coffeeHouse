@@ -1,3 +1,4 @@
+/* Download section moved below About section */
 @import url('https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,400;0,600;1,400;1,600&display=swap');
 
 :root {
@@ -19,12 +20,12 @@
 	--ff-base: 'Inter', system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
 
 	/* Heading 1 */
-	--h1-size: 42px;
+	--h1-size: 72px;
 	--h1-weight: 600;
-	--h1-line: 1.15;
+	--h1-line: 1.05;
 
 	/* Heading 2 */
-	--h2-size: 32px;
+	--h2-size: 60px;
 	--h2-weight: 600;
 	/* 125% -> 1.25 */
 	--h2-line: 1.25;
@@ -69,11 +70,28 @@ h2.accent,
 	font-style: italic;
 }
 
+/* Heading 3 styles */
+h3,
+.heading-3 {
+	font-family: var(--ff-base);
+	font-size: 24px;
+	font-weight: 600;
+	line-height: 1.25;
+	color: var(--text-dark);
+	margin: 0 0 0.5em 0;
+}
+
+h3.accent,
+.heading-3.accent {
+	font-style: italic;
+}
+
 .wrapper {
     max-width: 1440px;
     margin: 0 auto;
     padding: 0 40px;
     box-sizing: border-box;
+    padding-bottom: 1px;
 }
 
 .main-container {
@@ -110,6 +128,12 @@ h2.accent,
     line-height: 150%;
     letter-spacing: 0;
     color: var(--text-dark);
+    cursor: pointer;
+    transition: border-bottom 0.3s ease;
+}
+
+.nav-menu li:hover {
+    border-bottom: 1px solid var(--text-dark);
 }
 
 .menu-button {
@@ -128,6 +152,11 @@ h2.accent,
     align-items: center;
     gap: 8px;
     text-transform: capitalize;
+    transition: border-bottom 0.3s ease;
+}
+
+.menu-button:hover {
+    border-bottom: 1px solid var(--text-dark);
 }
 
 .menu-button::after {
@@ -451,4 +480,123 @@ section:not(:last-child) {
 
 section:last-child {
     margin-bottom: 40px;
+}
+
+/* Download section */
+.download-section {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.download__content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 100px;
+}
+
+.download__text,
+.download__visual {
+    flex: 0 1 630px;
+    max-width: 630px;
+}
+
+.download__text {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+}
+
+.download__title {
+    margin: 0;
+    font-size: 59px;
+    line-height: 125%;
+}
+
+/* Bump specificity to avoid overrides from generic heading rules */
+.download-section .download__title {
+    font-size: 59px;
+    line-height: 125%;
+}
+
+.download__title-accent { color: var(--text-accent); }
+
+.download__description {
+    font-family: var(--ff-base);
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 1.5;
+    color: var(--text-dark);
+    margin: 0;
+}
+
+.download__actions { display: flex; gap: 20px; }
+
+.download__btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    padding: 16px 24px;
+    border-radius: 100px;
+    background: var(--bg-body);
+    color: var(--text-dark);
+    text-decoration: none;
+    border: 1px solid var(--border-dark);
+    transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+}
+
+/* Inline SVG icons follow currentColor */
+.store-icon { fill: currentColor; display: inline-block; }
+
+
+.download__btn:hover {
+    background: var(--bg-container);
+    color: var(--text-light);
+    border-color: var(--bg-container);
+}
+
+/* Icon color follows text color via currentColor */
+
+.download__visual img { width: 100%; height: auto; display: block; }
+
+/* Footer */
+.footer {
+    background: var(--bg-container);
+    color: var(--text-light);
+    border-radius: 40px;
+    padding: 100px;
+    display: flex;
+    justify-content: space-between;
+    gap: 40px;
+    box-sizing: border-box;
+}
+
+.footer__cta { max-width: 530px; }
+.footer__title { margin: 0; color: var(--text-light); font-size: 60px; }
+.footer__title-accent { color: var(--text-accent); }
+.footer__text { margin: 20px 0 40px 0; color: var(--text-light); }
+
+.footer__socials { display: flex; gap: 12px; }
+.footer__social { display: inline-flex; align-items: center; justify-content: center; width: 60px; height: 60px; border: 1px solid var(--border-light); border-radius: 50%; color: var(--text-light); text-decoration: none; transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease; }
+.footer__icon { fill: currentColor; }
+.footer__social:hover { 
+    background: var(--bg-body); 
+    color: var(--text-dark); 
+    border-color: var(--text-light); 
+}
+
+.footer__social:hover .footer__icon-img {
+    filter: brightness(0) saturate(100%) invert(25%) sepia(8%) saturate(1000%) hue-rotate(314deg) brightness(95%) contrast(89%);
+}
+
+.footer__contacts { min-width: 530px; text-align: left; }
+.footer__subtitle { margin: 0 0 20px 0; color: var(--text-light); }
+.footer__list { list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 16px; }
+.footer__link { color: var(--text-light); text-decoration: none; }
+.footer__link:hover { text-decoration: underline; }
+
+.footer__link[href*="maps.google.com"]:hover {
+    text-decoration: none;
+    border-bottom: 1px solid var(--text-light);
 }

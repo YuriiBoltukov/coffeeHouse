@@ -25,8 +25,18 @@
   next?.addEventListener('click', () => goTo(index + 1));
   dots.forEach((dot, i) => dot.addEventListener('click', () => goTo(i)));
 
-  // Init
   update();
+})();
+
+// Menu button functionality
+(() => {
+  const menuButton = document.querySelector('.menu-button');
+  if (!menuButton) return;
+
+  menuButton.addEventListener('click', () => {
+    // You can change this URL to the page you want to navigate to
+    window.location.href = 'menu.html';
+  });
 })();
 
 
