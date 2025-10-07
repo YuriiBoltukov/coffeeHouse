@@ -1,19 +1,19 @@
 <!DOCTYPE html>
 <html lang="en">
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="normalize.css">
     <link rel="stylesheet" href="style.css">
     <script defer src="script.js"></script>
-    <title>Menu</title>
-</head>
+        <title>Menu</title>
+    </head>
 
-<body class="wrapper">
+<body class="wrapper page-menu">
     <header class="header">
         <div>
-            <img src="assets/images/logo (1).png" alt="Coffee Shop Logo">
+            <a href="index.html"><img src="assets/images/logo (1).png" alt="Coffee Shop Logo"></a>
         </div>
         <ul class="nav-menu">
             <li>Favorite coffe</li>
@@ -24,9 +24,189 @@
         <button class="menu-button">Menu</button>
     </header>
     <main class="main">
-        <section>
-            <h1>Menu</h1>
-            <p>Here will be the menu content...</p>
+        <section class="menu-section">
+            <h1 class="menu__title heading-1">Behind each of our cups hides an <span class="menu__title-accent">amazing surprise</span></h1>
+            <div class="menu__tabs">
+                <button class="menu__tab is-active" data-category="coffee">
+                    <img class="menu__tab-icon" src="assets/images/coffee.png" alt="Coffee">
+                    Coffee
+                </button>
+                <button class="menu__tab" data-category="tea">
+                    <img class="menu__tab-icon" src="assets/images/tea.png" alt="Tea">
+                    Tea
+                </button>
+                <button class="menu__tab" data-category="dessert">
+                    <img class="menu__tab-icon" src="assets/images/dessert.png" alt="Dessert">
+                    Dessert
+                </button>
+            </div>
+            <div class="menu__grid">
+                <!-- Coffee cards -->
+                <div class="menu__card" data-category="coffee">
+                    <img src="assets/images/coffee-1.jpg" alt="S' mores Frappuccino" class="menu__card-image">
+                    <div class="menu__card-content">
+                        <h3 class="menu__card-title">S' mores Frappuccino</h3>
+                        <p class="menu__card-description">This new drink takes an espresso and mixes it with brown sugar and cinnamon before being topped with oat milk.</p>
+                        <span class="menu__card-price">$5.50</span>
+                    </div>
+                </div>
+                <div class="menu__card" data-category="coffee">
+                    <img src="assets/images/coffee-2.jpg" alt="Caramel Macchiato" class="menu__card-image">
+                    <div class="menu__card-content">
+                        <h3 class="menu__card-title">Caramel Macchiato</h3>
+                        <p class="menu__card-description">Freshly steamed milk with vanilla-flavored syrup marked with espresso and finished with caramel sauce.</p>
+                        <span class="menu__card-price">$4.75</span>
+                    </div>
+                </div>
+                <div class="menu__card" data-category="coffee">
+                    <img src="assets/images/coffee-3.jpg" alt="Iced Coffee" class="menu__card-image">
+                    <div class="menu__card-content">
+                        <h3 class="menu__card-title">Iced Coffee</h3>
+                        <p class="menu__card-description">Our signature, rich espresso combined with bittersweet mocha sauce and steamed milk, then topped with sweetened whipped cream.</p>
+                        <span class="menu__card-price">$3.25</span>
+                    </div>
+                </div>
+                <div class="menu__card" data-category="coffee">
+                    <img src="assets/images/coffee-4.jpg" alt="Espresso" class="menu__card-image">
+                    <div class="menu__card-content">
+                        <h3 class="menu__card-title">Espresso</h3>
+                        <p class="menu__card-description">A concentrated form of coffee served in small, strong shots and is the base for many coffee drinks.</p>
+                        <span class="menu__card-price">$2.50</span>
+                    </div>
+                </div>
+                <div class="menu__card" data-category="coffee">
+                    <img src="assets/images/coffee-5.jpg" alt="Cappuccino" class="menu__card-image">
+                    <div class="menu__card-content">
+                        <h3 class="menu__card-title">Cappuccino</h3>
+                        <p class="menu__card-description">An espresso-based coffee drink that is traditionally prepared with steamed milk foam.</p>
+                        <span class="menu__card-price">$4.00</span>
+                    </div>
+                </div>
+                <div class="menu__card" data-category="coffee">
+                    <img src="assets/images/coffee-6.jpg" alt="Latte" class="menu__card-image">
+                    <div class="menu__card-content">
+                        <h3 class="menu__card-title">Latte</h3>
+                        <p class="menu__card-description">A coffee drink made with espresso and steamed milk, with a light layer of foam on top.</p>
+                        <span class="menu__card-price">$4.25</span>
+                    </div>
+                </div>
+                <div class="menu__card" data-category="coffee">
+                    <img src="assets/images/coffee-7.jpg" alt="Americano" class="menu__card-image">
+                    <div class="menu__card-content">
+                        <h3 class="menu__card-title">Americano</h3>
+                        <p class="menu__card-description">A style of coffee prepared by diluting an espresso with hot water, giving it a similar strength to drip coffee.</p>
+                        <span class="menu__card-price">$3.00</span>
+                    </div>
+                </div>
+                <div class="menu__card" data-category="coffee">
+                    <img src="assets/images/coffee-8.jpg" alt="Mocha" class="menu__card-image">
+                    <div class="menu__card-content">
+                        <h3 class="menu__card-title">Mocha</h3>
+                        <p class="menu__card-description">A chocolate-flavored variant of a caffè latte, made with espresso, steamed milk, and chocolate.</p>
+                        <span class="menu__card-price">$4.50</span>
+                    </div>
+                </div>
+
+                <!-- Tea cards -->
+                <div class="menu__card" data-category="tea">
+                    <img src="assets/images/tea-1.png" alt="Green Tea" class="menu__card-image">
+                    <div class="menu__card-content">
+                        <h3 class="menu__card-title">Green Tea</h3>
+                        <p class="menu__card-description">A type of tea that is made from Camellia sinensis leaves and buds that have not undergone the same withering and oxidation process.</p>
+                        <span class="menu__card-price">$3.50</span>
+                    </div>
+                </div>
+                <div class="menu__card" data-category="tea">
+                    <img src="assets/images/tea-2.png" alt="Black Tea" class="menu__card-image">
+                    <div class="menu__card-content">
+                        <h3 class="menu__card-title">Black Tea</h3>
+                        <p class="menu__card-description">A type of tea that is more oxidized than oolong, yellow, white and green teas, giving it a stronger flavor.</p>
+                        <span class="menu__card-price">$3.25</span>
+                    </div>
+                </div>
+                <div class="menu__card" data-category="tea">
+                    <img src="assets/images/tea-3.png" alt="Herbal Tea" class="menu__card-image">
+                    <div class="menu__card-content">
+                        <h3 class="menu__card-title">Herbal Tea</h3>
+                        <p class="menu__card-description">An infusion or tisane of herbs, spices, or other plant material in hot water, usually without caffeine.</p>
+                        <span class="menu__card-price">$3.75</span>
+                    </div>
+                </div>
+                <div class="menu__card" data-category="tea">
+                    <img src="assets/images/tea-4.png" alt="Chai Tea" class="menu__card-image">
+                    <div class="menu__card-content">
+                        <h3 class="menu__card-title">Chai Tea</h3>
+                        <p class="menu__card-description">A spiced tea beverage made by brewing black tea with a mixture of aromatic Indian spices and herbs.</p>
+                        <span class="menu__card-price">$4.00</span>
+                    </div>
+                </div>
+
+                <!-- Dessert cards -->
+                <div class="menu__card" data-category="dessert">
+                    <img src="assets/images/dessert-1.png" alt="Chocolate Cake" class="menu__card-image">
+                    <div class="menu__card-content">
+                        <h3 class="menu__card-title">Chocolate Cake</h3>
+                        <p class="menu__card-description">Rich, moist chocolate cake with layers of creamy chocolate frosting, perfect for any occasion.</p>
+                        <span class="menu__card-price">$6.50</span>
+                    </div>
+                </div>
+                <div class="menu__card" data-category="dessert">
+                    <img src="assets/images/dessert-2.png" alt="Cheesecake" class="menu__card-image">
+                    <div class="menu__card-content">
+                        <h3 class="menu__card-title">Cheesecake</h3>
+                        <p class="menu__card-description">Creamy New York-style cheesecake with a graham cracker crust and fresh berry topping.</p>
+                        <span class="menu__card-price">$7.00</span>
+                    </div>
+                </div>
+                <div class="menu__card" data-category="dessert">
+                    <img src="assets/images/dessert-3.png" alt="Tiramisu" class="menu__card-image">
+                    <div class="menu__card-content">
+                        <h3 class="menu__card-title">Tiramisu</h3>
+                        <p class="menu__card-description">Classic Italian dessert made with layers of coffee-soaked ladyfingers and mascarpone cream.</p>
+                        <span class="menu__card-price">$6.75</span>
+                    </div>
+                </div>
+                <div class="menu__card" data-category="dessert">
+                    <img src="assets/images/dessert-4.png" alt="Apple Pie" class="menu__card-image">
+                    <div class="menu__card-content">
+                        <h3 class="menu__card-title">Apple Pie</h3>
+                        <p class="menu__card-description">Traditional apple pie with flaky crust and warm cinnamon-spiced apple filling, served with vanilla ice cream.</p>
+                        <span class="menu__card-price">$5.50</span>
+                    </div>
+                </div>
+                <div class="menu__card" data-category="dessert">
+                    <img src="assets/images/dessert-5.png" alt="Brownie" class="menu__card-image">
+                    <div class="menu__card-content">
+                        <h3 class="menu__card-title">Brownie</h3>
+                        <p class="menu__card-description">Fudgy chocolate brownie with walnuts, served warm with a scoop of vanilla ice cream.</p>
+                        <span class="menu__card-price">$4.25</span>
+                    </div>
+                </div>
+                <div class="menu__card" data-category="dessert">
+                    <img src="assets/images/dessert-6.png" alt="Muffin" class="menu__card-image">
+                    <div class="menu__card-content">
+                        <h3 class="menu__card-title">Blueberry Muffin</h3>
+                        <p class="menu__card-description">Freshly baked muffin with plump blueberries and a sweet crumb topping, perfect for breakfast or snack.</p>
+                        <span class="menu__card-price">$3.50</span>
+                    </div>
+                </div>
+                <div class="menu__card" data-category="dessert">
+                    <img src="assets/images/dessert-7.png" alt="Croissant" class="menu__card-image">
+                    <div class="menu__card-content">
+                        <h3 class="menu__card-title">Croissant</h3>
+                        <p class="menu__card-description">Buttery, flaky French croissant baked fresh daily, perfect with coffee or as a light breakfast.</p>
+                        <span class="menu__card-price">$3.25</span>
+                    </div>
+                </div>
+                <div class="menu__card" data-category="dessert">
+                    <img src="assets/images/dessert-8.png" alt="Cookie" class="menu__card-image">
+                    <div class="menu__card-content">
+                        <h3 class="menu__card-title">Chocolate Chip Cookie</h3>
+                        <p class="menu__card-description">Classic chocolate chip cookie with chunks of dark chocolate, crispy on the outside and chewy inside.</p>
+                        <span class="menu__card-price">$2.75</span>
+                    </div>
+                </div>
+            </div>
         </section>
     </main>
     <footer class="footer">
@@ -61,6 +241,46 @@
             </ul>
         </div>
     </footer>
-</body>
+
+    <!-- Modal -->
+    <div class="modal" id="productModal">
+        <div class="modal__backdrop"></div>
+        <div class="modal__content">
+            <button class="modal__close" aria-label="Close modal">&times;</button>
+            <div class="modal__image">
+                <img id="modalImage" src="" alt="">
+            </div>
+            <div class="modal__info">
+                <h2 class="modal__title" id="modalTitle"></h2>
+                <p class="modal__description" id="modalDescription"></p>
+                <div class="modal__size">
+                    <span class="modal__size-label">Size</span>
+                    <div class="modal__size-options">
+                        <button class="modal__size-btn is-active" data-size="S">S</button>
+                        <button class="modal__size-btn" data-size="M">M</button>
+                        <button class="modal__size-btn" data-size="L">L</button>
+                    </div>
+                </div>
+                <div class="modal__additives">
+                    <span class="modal__additives-label">Additives</span>
+                    <div class="modal__additives-options">
+                        <button class="modal__additive-btn" data-additive="1">1</button>
+                        <button class="modal__additive-btn" data-additive="2">2</button>
+                        <button class="modal__additive-btn" data-additive="3">3</button>
+                    </div>
+                </div>
+                <div class="modal__total">
+                    <span class="modal__total-label">Total:</span>
+                    <span class="modal__total-price" id="modalPrice">$0.00</span>
+                </div>
+                <div class="modal__warning">
+                    <p>The cost is not final. Download our mobile app to see the final price and place your order. Earn loyalty points and enjoy your favorite coffee with up to 20% discount.</p>
+                </div>
+                <button class="modal__close-btn">Close</button>
+            </div>
+        </div>
+    </div>
+
+    </body>
 
 </html>
