@@ -4,8 +4,15 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="normalize.css">
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="styles/normalize.css">
+    <link rel="stylesheet" href="styles/variables.css">
+    <link rel="stylesheet" href="styles/base.css">
+    <link rel="stylesheet" href="styles/header.css">
+    <link rel="stylesheet" href="styles/menu.css">
+    <link rel="stylesheet" href="styles/footer.css">
+    <link rel="stylesheet" href="styles/modal.css">
+    <link rel="stylesheet" href="styles/burger.css">
+    <link rel="stylesheet" href="styles/responsive.css">
     <script defer src="script.js"></script>
         <title>Menu</title>
     </head>
@@ -16,13 +23,25 @@
             <a href="index.html"><img src="assets/images/logo (1).png" alt="Coffee Shop Logo"></a>
         </div>
         <ul class="nav-menu">
-            <li>Favorite coffe</li>
-            <li>About</li>
-            <li>Mobil app</li>
-            <li>Contact us</li>
+            <li><a href="index.html#favorite-coffee" class="nav-link">Favorite coffe</a></li>
+            <li><a href="index.html#about" class="nav-link">About</a></li>
+            <li><a href="index.html#mobile-app" class="nav-link">Mobil app</a></li>
+            <li><a href="index.html#contact" class="nav-link">Contact us</a></li>
         </ul>
         <button class="menu-button">Menu</button>
+        <button class="burger-menu" aria-label="Open menu">
+            <span class="burger-line"></span>
+            <span class="burger-line"></span>
+        </button>
     </header>
+    <nav class="mobile-menu">
+        <ul class="mobile-menu__list">
+            <li><a href="index.html#favorite-coffee" class="mobile-menu__link">Favorite coffee</a></li>
+            <li><a href="index.html#about" class="mobile-menu__link">About</a></li>
+            <li><a href="index.html#mobile-app" class="mobile-menu__link">Mobil app</a></li>
+            <li><a href="index.html#contact" class="mobile-menu__link">Contact us</a></li>
+        </ul>
+    </nav>
     <main class="main">
         <section class="menu-section">
             <h1 class="menu__title heading-1">Behind each of our cups hides an <span class="menu__title-accent">amazing surprise</span></h1>
@@ -41,7 +60,6 @@
                 </button>
             </div>
             <div class="menu__grid">
-                <!-- Coffee cards -->
                 <div class="menu__card" data-category="coffee">
                     <img src="assets/images/coffee-1.jpg" alt="S' mores Frappuccino" class="menu__card-image">
                     <div class="menu__card-content">
@@ -107,7 +125,6 @@
                     </div>
                 </div>
 
-                <!-- Tea cards -->
                 <div class="menu__card" data-category="tea">
                     <img src="assets/images/tea-1.png" alt="Green Tea" class="menu__card-image">
                     <div class="menu__card-content">
@@ -141,7 +158,6 @@
                     </div>
                 </div>
 
-                <!-- Dessert cards -->
                 <div class="menu__card" data-category="dessert">
                     <img src="assets/images/dessert-1.png" alt="Chocolate Cake" class="menu__card-image">
                     <div class="menu__card-content">
@@ -211,7 +227,7 @@
     </main>
     <footer class="footer">
         <div class="footer__cta">
-            <h2 class="footer__title heading-2">Sip, Savor, and <span class="footer__title-accent">Connect</span></h2>
+            <h2 class="footer__title heading-2">Sip, Savor, Smile <span class="footer__title-accent">It's coffee time!</span></h2>
             <p class="footer__text">Follow us on social media and never miss an update about new flavors and special
                 offers.</p>
             <div class="footer__socials">
@@ -242,11 +258,9 @@
         </div>
     </footer>
 
-    <!-- Modal -->
     <div class="modal" id="productModal">
         <div class="modal__backdrop"></div>
         <div class="modal__content">
-            <button class="modal__close" aria-label="Close modal">&times;</button>
             <div class="modal__image">
                 <img id="modalImage" src="" alt="">
             </div>
@@ -256,17 +270,17 @@
                 <div class="modal__size">
                     <span class="modal__size-label">Size</span>
                     <div class="modal__size-options">
-                        <button class="modal__size-btn is-active" data-size="S">S</button>
-                        <button class="modal__size-btn" data-size="M">M</button>
-                        <button class="modal__size-btn" data-size="L">L</button>
+                        <button class="modal__size-btn is-active" data-size="S" data-volume="200ml">S 200ml</button>
+                        <button class="modal__size-btn" data-size="M" data-volume="300ml">M 300ml</button>
+                        <button class="modal__size-btn" data-size="L" data-volume="400ml">L 400ml</button>
                     </div>
                 </div>
                 <div class="modal__additives">
                     <span class="modal__additives-label">Additives</span>
                     <div class="modal__additives-options">
-                        <button class="modal__additive-btn" data-additive="1">1</button>
-                        <button class="modal__additive-btn" data-additive="2">2</button>
-                        <button class="modal__additive-btn" data-additive="3">3</button>
+                        <button class="modal__additive-btn" data-additive="1" data-name="sugar">1</button>
+                        <button class="modal__additive-btn" data-additive="2" data-name="cinnamon">2</button>
+                        <button class="modal__additive-btn" data-additive="3" data-name="syrup">3</button>
                     </div>
                 </div>
                 <div class="modal__total">

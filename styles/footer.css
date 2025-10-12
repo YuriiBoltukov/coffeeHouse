@@ -1,0 +1,107 @@
+.footer {
+    background: var(--bg-container);
+    color: var(--text-light);
+    border-radius: 40px;
+    padding: 100px;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 100px;
+}
+
+.footer__cta {
+    flex: 1;
+    max-width: 530px;
+}
+
+.footer__title {
+    font-family: var(--ff-base);
+    font-size: 60px;
+    font-weight: 600;
+    line-height: 1.25;
+    color: var(--text-light);
+    margin: 0 0 40px 0;
+}
+
+.footer__title-accent {
+    color: var(--text-accent);
+    font-style: italic;
+}
+
+.footer__text {
+    font-family: var(--ff-base);
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 1.5;
+    color: var(--text-light);
+    margin: 0 0 40px 0;
+}
+
+.footer__socials {
+    display: flex;
+    gap: 12px;
+}
+
+.footer__social {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    background: #ffffff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background-color 0.3s ease;
+}
+
+.footer__social:hover {
+    background: var(--bg-body);
+}
+
+.footer__icon-img {
+    width: 24px;
+    height: 24px;
+    filter: brightness(0) saturate(100%) invert(89%) sepia(8%) saturate(1350%) hue-rotate(315deg) brightness(102%) contrast(89%);
+    transition: filter 0.3s ease;
+}
+
+.footer__social:hover .footer__icon-img {
+    filter: brightness(0) saturate(100%) invert(20%) sepia(8%) saturate(1350%) hue-rotate(315deg) brightness(102%) contrast(89%);
+}
+
+.footer__info {
+    flex: 1;
+    min-width: 530px;
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+}
+
+.footer__contact {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.footer__contact-title {
+    font-family: var(--ff-base);
+    font-size: 24px;
+    font-weight: 600;
+    line-height: 1.25;
+    color: var(--text-light);
+    margin: 0;
+}
+
+.footer__link {
+    font-family: var(--ff-base);
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 1.5;
+    color: var(--text-light);
+    text-decoration: none;
+    transition: border-bottom 0.3s ease;
+}
+
+.footer__link[href*="maps.google.com"]:hover {
+    text-decoration: none;
+    border-bottom: 1px solid var(--text-light);
+}
