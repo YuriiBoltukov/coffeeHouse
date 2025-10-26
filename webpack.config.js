@@ -39,7 +39,7 @@ module.exports = (env, argv) => {
         type: 'asset',
         parser: {
           dataUrlCondition: {
-            maxSize: 8192 // Файлы меньше 8kb будут инлайниться
+            maxSize: 8192 
           }
         },
         generator: {
@@ -59,6 +59,16 @@ module.exports = (env, argv) => {
     extensions: ['.ts', '.js']
   },
   plugins: [
+    new (class NoJekyllPlugin {
+      apply(compiler) {
+        compiler.hooks.emit.tap('NoJekyllPlugin', (compilation) => {
+          compilation.assets['.nojekyll'] = {
+            source: () => '',
+            size: () => 0
+          };
+        });
+      }
+    })(),
     new HtmlWebpackPlugin({
       template: './src/index.html',
       filename: 'index.html',
@@ -98,7 +108,7 @@ module.exports = (env, argv) => {
           from: path.resolve(__dirname, 'src/assets'),
           to: path.resolve(__dirname, 'dist/assets'),
           noErrorOnMissing: true
-        }
+        },
       ]
     })
   ],
