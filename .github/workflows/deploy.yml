@@ -4,6 +4,7 @@ on:
   push:
     branches:
       - main
+      - coffee-house
   workflow_dispatch:
 
 permissions:
