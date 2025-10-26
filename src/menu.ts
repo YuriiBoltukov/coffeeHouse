@@ -14,7 +14,10 @@ import {
   initMenuTabs,
   initModal,
   initBurgerMenu,
-  apiMenuService
+  apiMenuService,
+  apiModalService,
+  initCartIcon,
+  authButton
 } from './modules';
 
 import { appConfig } from './api';
@@ -22,11 +25,19 @@ import { appConfig } from './api';
 async function initMenu(): Promise<void> {
   // Initialize UI components
   initMenuButton();
-  initModal();
   initBurgerMenu();
+  initCartIcon();
+  authButton.refresh();
 
   // Initialize menu tabs
   initMenuTabs();
+
+  // Initialize modal based on configuration
+  if (appConfig.apiEnabled) {
+    apiModalService.init();
+  } else {
+    initModal();
+  }
 
   // Load products from API if enabled
   if (appConfig.apiEnabled) {

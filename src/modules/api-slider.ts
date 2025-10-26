@@ -44,12 +44,10 @@ export class ApiSliderService {
   }
 
   private getImageUrl(product: ApiProduct): string {
-    // Fallback to local images if API doesn't provide image URL
     if (product.image) {
       return product.image;
     }
     
-    // Cycle through 3 local slider images based on product ID
     const imageId = (product.id % 3) + 1;
     return `assets/images/coffee-slider-${imageId}.png`;
   }
@@ -76,7 +74,6 @@ export class ApiSliderService {
     const price: HTMLElement = document.createElement('span');
     price.className = 'slider__price';
     
-    // Show discount price if available, otherwise show regular price
     if (product.discountPrice) {
       price.textContent = this.formatPrice(product.discountPrice);
     } else {
@@ -130,26 +127,36 @@ export class ApiSliderService {
 
   async loadFavoriteProducts(): Promise<void> {
     try {
-      // Show loading indicator
       this.showLoading();
       
       const products: ApiProduct[] = await productsService.getFavoriteProducts();
       this.renderSlides(products);
       
-      // Initialize slider functionality after slides are created
       this.initSliderControls();
       
-      // Hide loading indicator
       this.hideLoading();
     } catch (error) {
       console.error('Error loading favorite products:', error);
       
-      // Hide loading and show error
-      this.hideLoading();
+      this.showError();
+    }
+  }
+
+  private showError(): void {
+    this.hideLoading();
+    
+    if (this.sliderLoading) {
+      const errorMessage: HTMLElement = document.createElement('div');
+      errorMessage.style.textAlign = 'center';
+      errorMessage.style.padding = '60px 20px';
+      errorMessage.innerHTML = `
+                <div style="color: #dc3545; font-size: 18px; margin-bottom: 10px;">Something went wrong.</div>
+                <div style="color: #6c757d; font-size: 14px;">Please refresh the page</div>
+      `;
       
-      if (this.sliderTrack) {
-        this.sliderTrack.innerHTML = '<p style="text-align: center; padding: 40px; color: #dc3545;">Failed to load favorite products. Please try again later.</p>';
-      }
+      this.sliderLoading.innerHTML = '';
+      this.sliderLoading.appendChild(errorMessage);
+      this.sliderLoading.style.display = 'block';
     }
   }
 

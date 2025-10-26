@@ -9,7 +9,10 @@ module.exports = (env, argv) => {
   return {
   entry: {
     main: './src/index.ts',
-    menu: './src/menu.ts'
+    menu: './src/menu.ts',
+    cart: './src/cart.ts',
+    login: './src/login.ts',
+    register: './src/register.ts'
   },
   output: {
     path: path.resolve(__dirname, 'dist'),
@@ -67,6 +70,24 @@ module.exports = (env, argv) => {
       filename: 'menu.html',
       inject: 'body',
       chunks: ['menu']
+    }),
+    new HtmlWebpackPlugin({
+      template: './src/cart.html',
+      filename: 'cart.html',
+      inject: 'body',
+      chunks: ['cart']
+    }),
+    new HtmlWebpackPlugin({
+      template: './src/login.html',
+      filename: 'login.html',
+      inject: 'body',
+      chunks: ['login']
+    }),
+    new HtmlWebpackPlugin({
+      template: './src/register.html',
+      filename: 'register.html',
+      inject: 'body',
+      chunks: ['register']
     }),
     ...(isProduction ? [new MiniCssExtractPlugin({
       filename: 'css/[name].[contenthash].css'

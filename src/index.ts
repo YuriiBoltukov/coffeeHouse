@@ -19,7 +19,9 @@ import {
   initMenuTabs,
   initModal,
   initBurgerMenu,
-  apiSliderService
+  apiSliderService,
+  initCartIcon,
+  authButton
 } from './modules';
 import { appConfig } from './api';
 
@@ -34,3 +36,5 @@ initMenuButton();
 initMenuTabs();
 initModal();
 initBurgerMenu();
+initCartIcon();
+authButton.refresh();

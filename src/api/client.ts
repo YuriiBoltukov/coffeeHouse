@@ -30,10 +30,22 @@ class ApiClient {
     }
   }
 
-  private async handleResponse<T>(response: Response): Promise<T> {
+  private async handleResponse<T>(response: Response, unwrapData: boolean = true): Promise<T> {
     if (!response.ok) {
+      let errorMessage: string = `HTTP error! status: ${response.status}`;
+      
+      try {
+        const errorData = await response.json();
+        if (errorData && typeof errorData === 'object') {
+          errorMessage = errorData.message || errorData.error || errorMessage;
+        }
+      } catch {
+        const errorText = await response.text();
+        errorMessage = errorText || errorMessage;
+      }
+      
       const error: ApiError = {
-        message: `HTTP error! status: ${response.status}`,
+        message: errorMessage,
         status: response.status
       };
       throw error;
@@ -42,7 +54,8 @@ class ApiClient {
     const data = await response.json();
     
     // Handle wrapped API responses { data: [...] }
-    if (data && typeof data === 'object' && 'data' in data) {
+    // For auth endpoints, we want to keep the full response structure
+    if (unwrapData && data && typeof data === 'object' && 'data' in data) {
       return data.data;
     }
     
@@ -57,7 +70,7 @@ class ApiClient {
         ...options,
         method: 'GET'
       });
-      return await this.handleResponse<T>(response);
+      return await this.handleResponse<T>(response, true);
     } catch (error) {
       if (error instanceof Error) {
         throw {
@@ -69,7 +82,7 @@ class ApiClient {
     }
   }
 
-  async post<T>(endpoint: string, data: unknown, options: FetchOptions = {}): Promise<T> {
+  async post<T>(endpoint: string, data: unknown, options: FetchOptions = {}, unwrapData: boolean = true): Promise<T> {
     const url: string = `${this.config.baseUrl}${endpoint}`;
     
     try {
@@ -82,7 +95,7 @@ class ApiClient {
         },
         body: JSON.stringify(data)
       });
-      return await this.handleResponse<T>(response);
+      return await this.handleResponse<T>(response, unwrapData);
     } catch (error) {
       if (error instanceof Error) {
         throw {
