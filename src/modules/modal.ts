@@ -208,27 +208,29 @@ export function initModal(): void {
     backdrop.addEventListener('click', closeModal);
   }
 
-  if (sizeOptions) {
-    function handleSizeClick(e: MouseEvent): void {
-      const button: HTMLElement | null = (e.target as HTMLElement).closest('.modal__size-btn') as HTMLElement | null;
-      if (button && sizeOptions) {
-        const buttons: NodeListOf<HTMLElement> = sizeOptions.querySelectorAll('.modal__size-btn');
-        buttons.forEach((b: HTMLElement): void => b.classList.remove('is-active'));
-        button.classList.add('is-active');
-        updatePrice();
-      }
+  function handleSizeClick(e: MouseEvent): void {
+    const button: HTMLElement | null = (e.target as HTMLElement).closest('.modal__size-btn') as HTMLElement | null;
+    if (button && sizeOptions) {
+      const buttons: NodeListOf<HTMLElement> = sizeOptions.querySelectorAll('.modal__size-btn');
+      buttons.forEach((b: HTMLElement): void => b.classList.remove('is-active'));
+      button.classList.add('is-active');
+      updatePrice();
     }
+  }
+
+  if (sizeOptions) {
     sizeOptions.addEventListener('click', handleSizeClick);
   }
 
-  if (additiveOptions) {
-    function handleAdditiveClick(e: MouseEvent): void {
-      const button: HTMLElement | null = (e.target as HTMLElement).closest('.modal__additive-btn') as HTMLElement | null;
-      if (button) {
-        button.classList.toggle('is-active');
-        updatePrice();
-      }
+  function handleAdditiveClick(e: MouseEvent): void {
+    const button: HTMLElement | null = (e.target as HTMLElement).closest('.modal__additive-btn') as HTMLElement | null;
+    if (button) {
+      button.classList.toggle('is-active');
+      updatePrice();
     }
+  }
+
+  if (additiveOptions) {
     additiveOptions.addEventListener('click', handleAdditiveClick);
   }
 

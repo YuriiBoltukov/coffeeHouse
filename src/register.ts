@@ -178,7 +178,7 @@ class RegisterPage {
     const password: string = this.passwordInput.value;
     
     const minLength = password.length >= 6;
-    const hasSpecialChar = /[!@#$%^&*(),.?":{}|<>\[\];'\\/_=+\-\s]/.test(password);
+    const hasSpecialChar = /[!@#$%^&*(),.?":{}|<>[\]';\\/_=+-\s]/.test(password);
 
     if (!minLength) {
       this.showPasswordError('Password must be at least 6 characters long');
