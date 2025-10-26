@@ -52,10 +52,6 @@ class LoginPage {
 
     const username: string = this.usernameInput.value.trim();
     
-    // Правила для логина
-    // 1. Длина не менее 3 символов
-    // 2. Должен начинаться с буквы
-    // 3. Разрешены только буквы английского алфавита
     const minLength = username.length >= 3;
     const startsWithLetter = /^[a-zA-Z]/.test(username);
     const onlyEnglishLetters = /^[a-zA-Z]+$/.test(username);
@@ -89,9 +85,6 @@ class LoginPage {
 
     const password: string = this.passwordInput.value;
     
-    // Правила для пароля
-    // 1. Длина не менее 6 символов
-    // 2. Должен содержать хотя бы 1 специальный символ
     const minLength = password.length >= 6;
     const hasSpecialChar = /[!@#$%^&*(),.?":{}|<>\[\];'\\/_=+\-\s]/.test(password);
 
@@ -214,7 +207,6 @@ class LoginPage {
         authService.setAuthToken(response.data.access_token);
         localStorage.setItem('user_id', response.data.user.id.toString());
         
-        // Update auth button state before redirect
         window.dispatchEvent(new Event('authStateChanged'));
         
         window.location.href = 'menu.html';

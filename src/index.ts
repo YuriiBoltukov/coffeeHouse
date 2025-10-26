@@ -25,7 +25,6 @@ import {
 } from './modules';
 import { appConfig } from './api';
 
-// Initialize API slider if enabled, otherwise use static slider
 if (appConfig.apiEnabled) {
   apiSliderService.init();
 } else {

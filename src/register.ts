@@ -195,7 +195,6 @@ class RegisterPage {
     this.clearPasswordError();
     this.passwordValid = true;
     
-    // Re-validate confirm password when password changes
     if (this.confirmPasswordInput && this.confirmPasswordInput.value) {
       this.validateConfirmPassword();
     }
@@ -422,7 +421,6 @@ class RegisterPage {
         authService.setAuthToken(response.data.access_token);
         localStorage.setItem('user_id', response.data.user.id.toString());
         
-        // Update auth button state before redirect
         window.dispatchEvent(new Event('authStateChanged'));
         
         window.location.href = 'menu.html';

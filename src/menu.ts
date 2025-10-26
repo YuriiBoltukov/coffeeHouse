@@ -29,17 +29,14 @@ async function initMenu(): Promise<void> {
   initCartIcon();
   authButton.refresh();
 
-  // Initialize menu tabs
   initMenuTabs();
 
-  // Initialize modal based on configuration
   if (appConfig.apiEnabled) {
     apiModalService.init();
   } else {
     initModal();
   }
 
-  // Load products from API if enabled
   if (appConfig.apiEnabled) {
     await apiMenuService.init();
   }

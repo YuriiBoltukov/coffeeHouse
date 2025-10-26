@@ -20,8 +20,6 @@ module.exports = (env, argv) => {
     clean: true,
     assetModuleFilename: 'assets/[name].[contenthash][ext][query]',
     publicPath: '/'
-    // Для GitHub Pages используйте:
-    // publicPath: '/coffeshop/'
   },
   module: {
     rules: [

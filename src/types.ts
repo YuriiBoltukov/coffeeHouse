@@ -79,10 +79,10 @@ export interface ApiProduct {
   id: number;
   name: string;
   description: string;
-  price: string | number; // API returns string, we convert to number
+  price: string | number;
   discountPrice?: string | number;
   category: Category;
-  image?: string; // May not be present in API response
+  image?: string;
   popular?: boolean;
 }
 

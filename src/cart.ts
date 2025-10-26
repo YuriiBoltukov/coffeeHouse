@@ -341,6 +341,5 @@ class CartPage {
   }
 }
 
-// Initialize cart page
 new CartPage();
 
