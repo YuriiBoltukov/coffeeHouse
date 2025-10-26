@@ -1,0 +1,99 @@
+@media (max-width: 768px) {
+    .header {
+        position: relative;
+        z-index: 1002;
+        background-color: var(--bg-body);
+        min-height: 60px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+    
+    .nav-menu {
+        display: none;
+    }
+    
+    .menu-button {
+        display: none;
+    }
+    
+    .burger-menu {
+        display: flex !important;
+        visibility: visible !important;
+        opacity: 1 !important;
+    }
+    
+    .mobile-menu {
+        position: fixed !important;
+        top: 0 !important;
+        right: -100% !important;
+        width: 100% !important;
+        height: 100vh !important;
+        background: var(--bg-body) !important;
+        transition: right 0.3s ease !important;
+        z-index: 1000 !important;
+        padding: 100px 40px 20px 40px !important;
+        box-sizing: border-box !important;
+        overflow-y: auto !important;
+        display: flex !important;
+        flex-direction: column !important;
+        justify-content: flex-start !important;
+    }
+    
+    .mobile-menu.is-open {
+        right: 0 !important;
+        visibility: visible !important;
+        opacity: 1 !important;
+    }
+    
+    .mobile-menu__list {
+        list-style: none !important;
+        margin: 0 !important;
+        padding: 0 !important;
+        display: flex !important;
+        flex-direction: column !important;
+        gap: 40px !important;
+        width: 100% !important;
+        max-width: 400px !important;
+    }
+    
+    .mobile-menu__link {
+        font-family: var(--ff-base) !important;
+        font-size: 32px !important;
+        font-weight: 600 !important;
+        line-height: 150% !important;
+        color: var(--text-dark) !important;
+        text-decoration: none !important;
+        transition: color 0.3s ease !important;
+        text-align: center !important;
+        display: flex !important;
+        align-items: center !important;
+        justify-content: center !important;
+        gap: 10px !important;
+        padding: 10px 0 !important;
+    }
+    
+    .mobile-menu__link--menu {
+        margin-top: 100px !important;
+    }
+    
+    .mobile-menu__icon {
+        width: 24px !important;
+        height: 24px !important;
+        fill: currentColor !important;
+    }
+    
+    .modal__content {
+        flex-direction: column;
+        padding: 16px;
+        gap: 20px;
+    }
+    
+    .modal__image {
+        flex: none;
+    }
+    
+    .modal__image img {
+        height: 310px;
+    }
+}

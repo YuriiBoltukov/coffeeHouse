@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Menu</title>
+    </head>
+
+<body class="wrapper page-menu">
+    <header class="header">
+        <div>
+            <a href="index.html"><img src="assets/images/logo (1).png" alt="Coffee Shop Logo"></a>
+        </div>
+        <ul class="nav-menu">
+            <li><a href="index.html#favorite-coffee" class="nav-link">Favorite coffe</a></li>
+            <li><a href="index.html#about" class="nav-link">About</a></li>
+            <li><a href="index.html#mobile-app" class="nav-link">Mobil app</a></li>
+            <li><a href="index.html#contact" class="nav-link">Contact us</a></li>
+        </ul>
+        <div style="display: flex; gap: 10px; align-items: center;">
+            <a href="cart.html" class="cart-icon" style="position: relative; display: inline-flex; align-items: center; justify-content: center; width: 40px; height: 40px; border: none; background: transparent; cursor: pointer; text-decoration: none;">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M7 22C8.1 22 9 21.1 9 20C9 18.9 8.1 18 7 18C5.9 18 5 18.9 5 20C5 21.1 5.9 22 7 22Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    <path d="M19 22C20.1 22 21 21.1 21 20C21 18.9 20.1 18 19 18C17.9 18 17 18.9 17 20C17 21.1 17.9 22 19 22Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    <path d="M1 1H5L7.68 14.39C7.85 15.31 8.58 16 9.5 16H19C19.95 16 20.71 15.28 20.92 14.37L22.4 7.37C22.56 6.65 22.01 6 21.27 6H7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+                <span class="cart-badge" style="display: none; position: absolute; top: 0; right: 0; background: #dc3545; color: white; border-radius: 50%; width: 20px; height: 20px; display: flex; align-items: center; justify-content: center; font-size: 12px; font-weight: bold;">0</span>
+            </a>
+            <a href="login.html" class="auth-button" style="padding: 8px 20px; background: #6c757d; color: white; border-radius: 4px; text-decoration: none; font-size: 14px; font-weight: 500; cursor: pointer;">Login</a>
+            <button class="menu-button">Menu</button>
+        </div>
+        <button class="burger-menu" aria-label="Open menu">
+            <span class="burger-line"></span>
+            <span class="burger-line"></span>
+        </button>
+    </header>
+    <nav class="mobile-menu">
+        <ul class="mobile-menu__list">
+            <li><a href="index.html#favorite-coffee" class="mobile-menu__link">Favorite coffee</a></li>
+            <li><a href="index.html#about" class="mobile-menu__link">About</a></li>
+            <li><a href="index.html#mobile-app" class="mobile-menu__link">Mobil app</a></li>
+            <li><a href="index.html#contact" class="mobile-menu__link">Contact us</a></li>
+        </ul>
+    </nav>
+    <main class="main">
+        <section class="menu-section">
+            <h1 class="menu__title heading-1">Behind each of our cups hides an <span class="menu__title-accent">amazing surprise</span></h1>
+            <div class="menu__tabs">
+                <button class="menu__tab is-active" data-category="coffee">
+                    <img class="menu__tab-icon" src="assets/images/coffee.png" alt="Coffee">
+                    Coffee
+                </button>
+                <button class="menu__tab" data-category="tea">
+                    <img class="menu__tab-icon" src="assets/images/tea.png" alt="Tea">
+                    Tea
+                </button>
+                <button class="menu__tab" data-category="dessert">
+                    <img class="menu__tab-icon" src="assets/images/dessert.png" alt="Dessert">
+                    Dessert
+                </button>
+            </div>
+            <div class="menu__loading" style="display: none; text-align: center; padding: 60px 20px;">
+                <div class="spinner" style="width: 50px; height: 50px; margin: 0 auto; border: 4px solid #f3f3f3; border-top: 4px solid #6c757d; border-radius: 50%; animation: spin 1s linear infinite;"></div>
+                <p style="margin-top: 20px; color: #6c757d; font-size: 16px;">Loading products...</p>
+            </div>
+            <style>
+                @keyframes spin {
+                    0% { transform: rotate(0deg); }
+                    100% { transform: rotate(360deg); }
+                }
+            </style>
+            <div class="menu__grid">
+            </div>
+        </section>
+    </main>
+    <footer class="footer">
+        <div class="footer__cta">
+            <h2 class="footer__title heading-2">Sip, Savor, Smile <span class="footer__title-accent">It's coffee time!</span></h2>
+            <p class="footer__text">Follow us on social media and never miss an update about new flavors and special
+                offers.</p>
+            <div class="footer__socials">
+                <a href="#" class="footer__social" aria-label="Instagram">
+                    <img class="footer__icon-img" src="assets/images/instagram.svg" alt="Instagram">
+                </a>
+                <a href="#" class="footer__social" aria-label="Facebook">
+                    <img class="footer__icon-img" src="assets/images/facebook.svg" alt="Facebook">
+                </a>
+                <a href="#" class="footer__social" aria-label="Twitter">
+                    <img class="footer__icon-img" src="assets/images/twitter.svg" alt="Twitter">
+                </a>
+            </div>
+        </div>
+        <div class="footer__contacts">
+            <h3 class="footer__subtitle heading-2">Contact us</h3>
+            <ul class="footer__list">
+                <li class="footer__item">
+                    <a href="https://maps.google.com" class="footer__link">8558 Green Rd., LA</a>
+                </li>
+                <li class="footer__item">
+                    <a href="tel:+16035550123" class="footer__link">+1 (603) 555-0123</a>
+                </li>
+                <li class="footer__item">
+                    <a href="mailto:hello@coffeehouse.com" class="footer__link">hello@coffeehouse.com</a>
+                </li>
+            </ul>
+        </div>
+    </footer>
+
+    <div class="modal" id="productModal">
+        <div class="modal__backdrop"></div>
+        <div class="modal__overlay" style="display: none;"></div>
+        <div class="modal__content">
+            <div class="modal__image">
+                <img id="modalImage" src="assets/images/coffee-1.jpg" alt="Product">
+            </div>
+            <div class="modal__info">
+                <h2 class="modal__title" id="modalTitle"></h2>
+                <p class="modal__description" id="modalDescription"></p>
+                <div class="modal__size">
+                    <span class="modal__size-label">Size</span>
+                    <div class="modal__size-options">
+                        <button class="modal__size-btn is-active" data-size="S" data-volume="200ml">S 200ml</button>
+                        <button class="modal__size-btn" data-size="M" data-volume="300ml">M 300ml</button>
+                        <button class="modal__size-btn" data-size="L" data-volume="400ml">L 400ml</button>
+                    </div>
+                </div>
+                <div class="modal__additives">
+                    <span class="modal__additives-label">Additives</span>
+                    <div class="modal__additives-options">
+                        <button class="modal__additive-btn" data-additive="1" data-name="sugar">1</button>
+                        <button class="modal__additive-btn" data-additive="2" data-name="cinnamon">2</button>
+                        <button class="modal__additive-btn" data-additive="3" data-name="syrup">3</button>
+                    </div>
+                </div>
+                <div class="modal__total">
+                    <span class="modal__total-label">Total:</span>
+                    <span class="modal__total-price" id="modalPrice">$0.00</span>
+                </div>
+                <div class="modal__warning">
+                    <p>The cost is not final. Download our mobile app to see the final price and place your order. Earn loyalty points and enjoy your favorite coffee with up to 20% discount.</p>
+                </div>
+                <div style="display: flex; gap: 10px; margin-top: 20px;">
+                    <button class="modal__add-to-cart" style="flex: 1; padding: 15px; background: #6c757d; color: white; border: none; border-radius: 8px; font-size: 16px; cursor: pointer;">Добавить в корзину</button>
+                    <button class="modal__close-btn" style="padding: 15px 30px; background: #f8f9fa; border: 1px solid #dee2e6; border-radius: 8px; font-size: 16px; cursor: pointer;">Закрыть</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    </body>
+
+</html>

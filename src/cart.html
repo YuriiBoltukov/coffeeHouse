@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cart - Coffee Shop</title>
+</head>
+
+<body class="wrapper">
+    <header class="header">
+        <div>
+            <a href="index.html"><img src="assets/images/logo (1).png" alt="Coffee Shop Logo"></a>
+        </div>
+        <ul class="nav-menu">
+            <li><a href="index.html#favorite-coffee" class="nav-link">Favorite coffe</a></li>
+            <li><a href="index.html#about" class="nav-link">About</a></li>
+            <li><a href="index.html#mobile-app" class="nav-link">Mobil app</a></li>
+            <li><a href="index.html#contact" class="nav-link">Contact us</a></li>
+        </ul>
+        <div style="display: flex; gap: 10px; align-items: center;">
+            <div style="display: flex; gap: 10px; align-items: center;">
+                <a href="cart.html" class="cart-icon" style="position: relative; display: inline-flex; align-items: center; justify-content: center; width: 40px; height: 40px; border: none; background: transparent; cursor: pointer; text-decoration: none;">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M7 22C8.1 22 9 21.1 9 20C9 18.9 8.1 18 7 18C5.9 18 5 18.9 5 20C5 21.1 5.9 22 7 22Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        <path d="M19 22C20.1 22 21 21.1 21 20C21 18.9 20.1 18 19 18C17.9 18 17 18.9 17 20C17 21.1 17.9 22 19 22Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        <path d="M1 1H5L7.68 14.39C7.85 15.31 8.58 16 9.5 16H19C19.95 16 20.71 15.28 20.92 14.37L22.4 7.37C22.56 6.65 22.01 6 21.27 6H7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                    <span class="cart-badge" style="display: none; position: absolute; top: 0; right: 0; background: #dc3545; color: white; border-radius: 50%; width: 20px; height: 20px; display: flex; align-items: center; justify-content: center; font-size: 12px; font-weight: bold;">0</span>
+                </a>
+                <button class="menu-button">Menu</button>
+            </div>
+        </div>
+        <a href="login.html" class="auth-button" style="padding: 8px 20px; background: #6c757d; color: white; border-radius: 4px; text-decoration: none; font-size: 14px; font-weight: 500; cursor: pointer;">Login</a>
+        <button class="burger-menu" aria-label="Open menu">
+            <span class="burger-line"></span>
+            <span class="burger-line"></span>
+        </button>
+    </header>
+    <main class="main">
+        <section class="cart-section" style="padding: 40px 20px;">
+            <h1 class="heading-1" style="margin-bottom: 30px;">Cart</h1>
+            
+            <div class="cart-container">
+                <div id="cartItems" class="cart-items">
+                </div>
+                
+                <div class="cart-summary">
+                    <div class="cart-total">
+                        <h3>Total: <span id="cartTotal">$0.00</span></h3>
+                    </div>
+                    
+                    <div id="authSection">
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+</body>
+
+</html>
+
