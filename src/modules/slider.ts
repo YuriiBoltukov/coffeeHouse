@@ -1,5 +1,10 @@
+interface SliderState {
+  index: number;
+  autoSlideInterval: number | undefined;
+}
+
 export function initSlider(): void {
-  const slider = document.querySelector('.slider');
+  const slider: HTMLElement | null = document.querySelector('.slider');
   if (!slider) return;
 
   const track: HTMLElement | null = slider.querySelector('.slider__track');
@@ -8,60 +13,80 @@ export function initSlider(): void {
   const next: HTMLElement | null = slider.querySelector('.slider__arrow--next');
   const dots: HTMLElement[] = Array.from(slider.querySelectorAll('.slider__dot'));
 
-  let index = 0;
-  let autoSlideInterval: number | undefined;
+  const state: SliderState = {
+    index: 0,
+    autoSlideInterval: undefined
+  };
+
+  const autoSlideDelay: number = 5000;
 
   function update(): void {
     if (!track) return;
-    track.style.transform = `translateX(-${index * (100 / slides.length)}%)`;
-    slides.forEach((s, i) => s.classList.toggle('is-active', i === index));
-    dots.forEach((d, i) => d.classList.toggle('is-active', i === index));
+    const slideCount: number = slides.length;
+    const translateX: number = state.index * (100 / slideCount);
+    track.style.transform = `translateX(-${translateX}%)`;
+    
+    slides.forEach((slide: HTMLElement, i: number): void => {
+      slide.classList.toggle('is-active', i === state.index);
+    });
+    
+    dots.forEach((dot: HTMLElement, i: number): void => {
+      dot.classList.toggle('is-active', i === state.index);
+    });
   }
 
-  function goTo(i: number): void {
-    if (i < 0) {
-      index = slides.length - 1;
-    } else if (i >= slides.length) {
-      index = 0;
+  function goTo(targetIndex: number): void {
+    if (targetIndex < 0) {
+      state.index = slides.length - 1;
+    } else if (targetIndex >= slides.length) {
+      state.index = 0;
     } else {
-      index = i;
+      state.index = targetIndex;
     }
     update();
   }
 
   function nextSlide(): void {
-    goTo(index + 1);
+    goTo(state.index + 1);
   }
 
   function startAutoSlide(): void {
-    autoSlideInterval = window.setInterval(nextSlide, 5000);
+    state.autoSlideInterval = window.setInterval(nextSlide, autoSlideDelay);
   }
 
   function stopAutoSlide(): void {
-    clearInterval(autoSlideInterval);
+    clearInterval(state.autoSlideInterval);
+  }
+
+  function handlePrevClick(): void {
+    stopAutoSlide();
+    goTo(state.index - 1);
+    startAutoSlide();
+  }
+
+  function handleNextClick(): void {
+    stopAutoSlide();
+    goTo(state.index + 1);
+    startAutoSlide();
+  }
+
+  function handleDotClick(index: number): void {
+    stopAutoSlide();
+    goTo(index);
+    startAutoSlide();
   }
 
   if (prev) {
-    prev.addEventListener('click', () => {
-      stopAutoSlide();
-      goTo(index - 1);
-      startAutoSlide();
-    });
+    prev.addEventListener('click', handlePrevClick);
   }
 
   if (next) {
-    next.addEventListener('click', () => {
-      stopAutoSlide();
-      goTo(index + 1);
-      startAutoSlide();
-    });
+    next.addEventListener('click', handleNextClick);
   }
 
-  dots.forEach((dot, i) => {
-    dot.addEventListener('click', () => {
-      stopAutoSlide();
-      goTo(i);
-      startAutoSlide();
+  dots.forEach((dot: HTMLElement, i: number): void => {
+    dot.addEventListener('click', (): void => {
+      handleDotClick(i);
     });
   });
 

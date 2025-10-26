@@ -7,7 +7,10 @@ module.exports = (env, argv) => {
   const isProduction = argv.mode === 'production';
 
   return {
-  entry: './src/index.ts',
+  entry: {
+    main: './src/index.ts',
+    menu: './src/menu.ts'
+  },
   output: {
     path: path.resolve(__dirname, 'dist'),
     filename: 'js/[name].[contenthash].js',
@@ -56,12 +59,14 @@ module.exports = (env, argv) => {
     new HtmlWebpackPlugin({
       template: './src/index.html',
       filename: 'index.html',
-      inject: 'body'
+      inject: 'body',
+      chunks: ['main']
     }),
     new HtmlWebpackPlugin({
       template: './src/menu.html',
       filename: 'menu.html',
-      inject: 'body'
+      inject: 'body',
+      chunks: ['menu']
     }),
     ...(isProduction ? [new MiniCssExtractPlugin({
       filename: 'css/[name].[contenthash].css'

@@ -54,48 +54,28 @@
             <section class="slider-section" id="favorite-coffee">
                 <h2 class="slider__title heading-2">Choose your <span class="slider__title-accent">favorite
                     </span>coffee</h2>
+                <div class="slider-loading" style="display: none; text-align: center; padding: 60px 20px;">
+                    <div class="spinner" style="width: 50px; height: 50px; margin: 0 auto; border: 4px solid #f3f3f3; border-top: 4px solid #6c757d; border-radius: 50%; animation: spin 1s linear infinite;"></div>
+                    <p style="margin-top: 20px; color: #6c757d; font-size: 16px;">Loading favorite coffee...</p>
+                </div>
                 <div class="slider" aria-roledescription="carousel">
                     <button class="slider__arrow slider__arrow--prev" aria-label="Previous slide"></button>
                     <div class="slider__viewport">
                         <div class="slider__track">
-                            <div class="slider__slide is-active">
-                                <img src="assets/images/coffee-slider-1.png" alt="Espresso">
-                                <div class="slider__info">
-                                    <h3 class="slider__name">S'mores Frappuccino</h3>
-                                    <p class="slider__description">This new drink takes an espresso and mixes it with
-                                        brown sugar and cinnamon before being topped with oat milk.</p>
-                                    <span class="slider__price">$5.50</span>
-                                </div>
-                            </div>
-                            <div class="slider__slide">
-                                <img src="assets/images/coffee-slider-2.png" alt="Cappuccino">
-                                <div class="slider__info">
-                                    <h3 class="slider__name">Caramel Macchiato</h3>
-                                    <p class="slider__description">Freshly steamed milk with vanilla-flavored syrup
-                                        marked with espresso and finished with caramel sauce.</p>
-                                    <span class="slider__price">$4.75</span>
-                                </div>
-                            </div>
-                            <div class="slider__slide">
-                                <img src="assets/images/coffee-slider-3.png" alt="Latte">
-                                <div class="slider__info">
-                                    <h3 class="slider__name">Iced Coffee</h3>
-                                    <p class="slider__description">Our signature, rich espresso combined with
-                                        bittersweet mocha sauce and steamed milk, then topped with sweetened whipped
-                                        cream.</p>
-                                    <span class="slider__price">$3.25</span>
-                                </div>
-                            </div>
+                            <!-- Slider slides will be loaded dynamically from API -->
                         </div>
                     </div>
                     <button class="slider__arrow slider__arrow--next" aria-label="Next slide"></button>
                 </div>
                 <div class="slider__dots" role="tablist" aria-label="Choose slide">
-                    <button class="slider__dot is-active" role="tab" aria-selected="true"
-                        aria-controls="slide-1"></button>
-                    <button class="slider__dot" role="tab" aria-selected="false" aria-controls="slide-2"></button>
-                    <button class="slider__dot" role="tab" aria-selected="false" aria-controls="slide-3"></button>
+                    <!-- Slider dots will be generated dynamically -->
                 </div>
+                <style>
+                    @keyframes spin {
+                        0% { transform: rotate(0deg); }
+                        100% { transform: rotate(360deg); }
+                    }
+                </style>
             </section>
             <section class="about-section" id="about">
                 <h2 class="about__title heading-2">Resource is <span class="about__title-accent">the perfect and

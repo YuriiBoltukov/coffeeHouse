@@ -3,34 +3,36 @@ import './styles/normalize.css';
 import './styles/variables.css';
 import './styles/base.css';
 import './styles/header.css';
-import './styles/hero.css';
-import './styles/slider.css';
-import './styles/about.css';
-import './styles/download.css';
-import './styles/footer.css';
 import './styles/menu.css';
 import './styles/modal.css';
 import './styles/burger.css';
+import './styles/footer.css';
 import './styles/responsive.css';
 
 import {
-  initSlider,
   initMenuButton,
   initMenuTabs,
   initModal,
   initBurgerMenu,
-  apiSliderService
+  apiMenuService
 } from './modules';
+
 import { appConfig } from './api';
 
-// Initialize API slider if enabled, otherwise use static slider
-if (appConfig.apiEnabled) {
-  apiSliderService.init();
-} else {
-  initSlider();
+async function initMenu(): Promise<void> {
+  // Initialize UI components
+  initMenuButton();
+  initModal();
+  initBurgerMenu();
+
+  // Initialize menu tabs
+  initMenuTabs();
+
+  // Load products from API if enabled
+  if (appConfig.apiEnabled) {
+    await apiMenuService.init();
+  }
 }
 
-initMenuButton();
-initMenuTabs();
-initModal();
-initBurgerMenu();
+initMenu();
+

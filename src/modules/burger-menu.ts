@@ -1,7 +1,7 @@
 export function initBurgerMenu(): void {
-  const burgerMenu = document.querySelector('.burger-menu');
-  const mobileMenu = document.querySelector('.mobile-menu');
-  const mobileMenuLinks = document.querySelectorAll('.mobile-menu__link');
+  const burgerMenu: HTMLElement | null = document.querySelector('.burger-menu');
+  const mobileMenu: HTMLElement | null = document.querySelector('.mobile-menu');
+  const mobileMenuLinks: NodeListOf<HTMLElement> = document.querySelectorAll('.mobile-menu__link');
   
   if (!burgerMenu || !mobileMenu) {
     return;
@@ -21,7 +21,7 @@ export function initBurgerMenu(): void {
     document.body.style.overflow = '';
   }
 
-  burgerMenu.addEventListener('click', () => {
+  function toggleMobileMenu(): void {
     if (!mobileMenu) return;
 
     if (mobileMenu.classList.contains('is-open')) {
@@ -29,16 +29,21 @@ export function initBurgerMenu(): void {
     } else {
       openMobileMenu();
     }
-  });
+  }
 
-  mobileMenuLinks.forEach(link => {
-    link.addEventListener('click', () => {
+  if (burgerMenu) {
+    burgerMenu.addEventListener('click', toggleMobileMenu);
+  }
+
+  mobileMenuLinks.forEach((link: HTMLElement): void => {
+    link.addEventListener('click', (): void => {
       closeMobileMenu();
     });
   });
 
   function handleResize(): void {
-    if (window.innerWidth > 768) {
+    const breakpoint: number = 768;
+    if (window.innerWidth > breakpoint) {
       closeMobileMenu();
     }
   }

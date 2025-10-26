@@ -1,9 +1,13 @@
 export function initMenuButton(): void {
-  const menuButton = document.querySelector('.menu-button');
+  const menuButton: HTMLElement | null = document.querySelector('.menu-button');
   if (!menuButton) return;
 
-  menuButton.addEventListener('click', () => {
-    window.location.href = 'menu.html';
-  });
+  const menuUrl: string = 'menu.html';
+
+  function navigateToMenu(): void {
+    window.location.href = menuUrl;
+  }
+
+  menuButton.addEventListener('click', navigateToMenu);
 }
 
